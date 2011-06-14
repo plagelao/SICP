@@ -16,7 +16,7 @@ I had never done any LISP before. Actually, I had never done any funtional progr
 - **Means of combination**, by which compound elements are built from simpler ones, and
 - **Means of abstraction**, by which compound elements can be named and manipulated as units.
 
-I never though about it, but this is a simple way to understand a language. Understand how to create the simplest entities, understand how to compound elements and how to name them... Is there anything else? Well, yes. There are a lot of things more, but this is sufficient to understand how a language works.
+I never thought about it, but this is a simple way to understand a language. Understand how to create the simplest entities, understand how to compound elements and how to name them... Is there anything else? Well, yes. There are a lot of things more, but this is sufficient to understand how a language works.
 
 Based on those mechanisms, the authors guide us through the basics of LISP in a very easy way. We learn how to create numbers, combinations of numbers (adding, substracting, etc), how to name entities and procedures, how to create conditional expressions and a little bit about how the environment works.
 
