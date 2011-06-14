@@ -1,0 +1,30 @@
+---
+layout: post
+title: Section 1.1
+date: 2011-06-14 13:00:00 +00:00
+categories:
+  - sicp
+  - scheme
+  - lisp
+---
+
+I had never done any LISP before. Actually, I had never done any funtional programming at all... That's the main reason I started SICP. I think it is important to try new languages and to learn new programming paradigms.
+
+[Section 1.1](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1) starts explaining the three mechanisms every powerful language should have to help you organize your ideas about the process you are creating:
+
+- **Primitive expressions**, which represent the simplest entities the language is concerned with,
+- **Means of combination**, by which compound elements are built from simpler ones, and
+- **Means of abstraction**, by which compound elements can be named and manipulated as units.
+
+I never though about it, but this is a simple way to understand a language. Understand how to create the simplest entities, understand how to compound elements and how to name them... Is there anything else? Well, yes. There are a lot of things more, but this is sufficient to understand how a language works.
+
+Based on those mechanisms, the authors guide us through the basics of LISP in a very easy way. We learn how to create numbers, combinations of numbers (adding, substracting, etc), how to name entities and procedures, how to create conditional expressions and a little bit about how the environment works.
+
+The authors also introduce us to the concept of black-box abstraction: implementation details are not important for the user of the abstraction.
+
+**Exercises**
+Every concept in this section is explained with an example, but the authors propose some exercises for the student. If you want to have a look at how I resolved them, visit [my Github repository for this study group](http://github.com/plagelao/SICP/tree/master/exercises/chapter-1).
+
+Please, share your thoughts and correct me if I'm wrong.
+
+See you next week!
