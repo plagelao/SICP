@@ -69,7 +69,7 @@ In order to understand those concept, the authors propose two exercises:
 
         (A 3 3)
 
-  **You can see my awnser [here](https://github.com/plagelao/SICP/blob/master/exercises/chapter-1/exercise-10.scm)**
+  **You can see my answer [here](https://github.com/plagelao/SICP/blob/master/exercises/chapter-1/exercise-10.scm)**
 
   Consider the following procedures, where A is the procedure defined above:
 
