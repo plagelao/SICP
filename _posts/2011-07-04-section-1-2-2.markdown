@@ -75,7 +75,8 @@ Let's have a look at the exercises for this section:
   Fib(n) = (&phi;^n - &psi;^n)/&radic;5.
 
 
-  Mathematics! It has been a long time since my last induction proof, but let's try it.
+
+  *Mathematics!* It has been a long time since my last induction proof, but let's try it.
 
   Ok, so we start with:
 
@@ -162,9 +163,7 @@ Let's have a look at the exercises for this section:
 
   ((1 - &radic;5)/2)^2 = (6 - 2&radic;5)/2 = (3 - &radic;5)/2
 
-  1 + ((1 - &radic;5)/2) = (2 + 1 - &radic;5)/2
-
-                         = (3 - &radic;5)/2
+  1 + ((1 - &radic;5)/2) = (2 + 1 - &radic;5)/2 = (3 - &radic;5)/2
 
 
   Yes! We got our proof.
