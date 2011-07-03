@@ -22,7 +22,7 @@ Let's have a look at the exercises for this section:
                (* 2 (f-recursive (- n 2)))
                (* 3 (f-recursive (- n 3))))))
 
-  This is a perfect example of tree recursion. In order to get the n element we need to know the n-1, n-2 and n-3 elements. But, in order to know, for example, the n-2 element, we need to know the n-3 (again), n-4 and n-5... This is not very efficient, we can do something better (for this problem). 's try the iterative one:
+  This is a perfect example of tree recursion. In order to get the n element we need to know the n-1, n-2 and n-3 elements. But, in order to know, for example, the n-2 element, we need to know the n-3 (again), n-4 and n-5... This is not very efficient, we can do something better (for this problem). Let's try the iterative one:
 
         (define (f-iterative n)
           (define (f-iter a b c count)
@@ -45,7 +45,7 @@ Let's have a look at the exercises for this section:
         1 4 6 4 1
            ...
 
-  The numbers at the edge of the triangle are all 1, and each number inside the triangle is the sum of the two numbers above it.35 Write a procedure that computes elements of Pascal's triangle by means of a recursive process.
+  The numbers at the edge of the triangle are all 1, and each number inside the triangle is the sum of the two numbers above it. Write a procedure that computes elements of Pascal's triangle by means of a recursive process.
 
   And here you can see my solution:
 
