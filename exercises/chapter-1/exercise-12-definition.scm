@@ -1,0 +1,5 @@
+(define (pascal-triangle pow coefficient)
+  (cond ((= pow 1) 1)
+        ((= coefficient 1) 1)
+        ((= coefficient pow) 1)
+        (else (+ (pascal-triangle (- pow 1) coefficient) (pascal-triangle (- pow 1) (- coefficient 1))))))
