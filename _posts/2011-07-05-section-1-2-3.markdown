@@ -92,7 +92,7 @@ Let's have a look at the exercises for this section:
 
     The order of growth in space is linear, since we need to call sine (a/3 + 1) times. That is, &theta;(n).
 
-    The order of growth in number of steps is a little bit trickier. Since we are using (/ angle 3), we only increase the number of steps if the new angle is three times de old one. That mades it &theta;(log n).
+    The order of growth in number of steps is a little bit trickier. Since we are using (/ angle 3), we only increase the number of steps if the new angle is three times the old one. That mades it &theta;(log n).
 
 
 And that is all for today. I am really bad calculating any order of growth.
