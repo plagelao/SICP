@@ -8,3 +8,7 @@
 (load "exercises/chapter-1/exercise-10.scm")
 (load "exercises/chapter-1/exercise-11.scm")
 (load "exercises/chapter-1/exercise-12.scm")
+(load "exercises/chapter-1/exercise-16.scm")
+(load "exercises/chapter-1/exercise-17.scm")
+(load "exercises/chapter-1/exercise-18.scm")
+(load "exercises/chapter-1/exercise-19.scm")

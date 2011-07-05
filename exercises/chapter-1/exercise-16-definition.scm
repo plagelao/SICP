@@ -1,0 +1,6 @@
+(define (iter-fast-exp b n)
+  (define (iter-exp b n a)
+    (cond ((= n 0) a)
+          ((even? n) (iter-exp (* b b) (/ n 2) a))
+          (else (iter-exp b (- n 1) (* a b)))))
+  (iter-exp b n 1))
