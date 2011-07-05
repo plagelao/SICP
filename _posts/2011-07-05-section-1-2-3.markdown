@@ -92,5 +92,4 @@ Let's have a look at the exercises for this section:
 
     The order of growth is the same in space and in  number of steps. Since we are using (/ angle 3), we only increase the space and the number of steps if the new angle is three times the old one. That mades it &theta;(log n).
 
-
 And that is all for today. I am really bad calculating any order of growth.
