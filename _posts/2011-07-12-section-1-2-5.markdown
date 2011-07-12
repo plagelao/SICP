@@ -1,0 +1,66 @@
+---
+layout: post
+title: Section 1.2.5
+date: 2011-07-12 21:00:00 +00:00
+categories:
+  - sicp
+  - scheme
+  - lisp
+---
+This is an easy section. It is a reminder of [section 1.1.5](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1.5) (so I will probably do it wrong).
+
+- Exercise 1.20  The process that a procedure generates is of course dependent on the rules used by the interpreter. As an example, consider the iterative gcd procedure given above. Suppose we were to interpret this procedure using normal-order evaluation, as discussed in [section 1.1.5](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1.5). (The normal-order-evaluation rule for if is described in [exercise 1.5](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_thm_1.5).) Using the substitution method (for normal order), illustrate the process generated in evaluating (gcd 206 40) and indicate the remainder operations that are actually performed. How many remainder operations are actually performed in the normal-order evaluation of (gcd 206 40)? In the applicative-order evaluation?
+
+  The procedure that we are going to use to calculate the g.c.d of two integers is:
+
+        (define (gcd a b)
+         (if (= b 0)
+          a
+          (gcd b (remainder a b))))
+
+  If we use normal-order evaluation we performe the remainder operation 18 times. The first 14 operation are necessary to evaluate the conditionals. The last 4 are used to calculate the final result (the g.c.d.). Let's have a look at the process (This is going to be a little bit nasty...):
+
+        (gcd 206 40)
+        (if (= 40 0) 206 (gcd 40 (remainder 206 40)))
+        (gcd 40 (remainder 206 40))
+        (if (= (remainder 206 40) 0) something (gcd (remainder 206 40) (remainder 40 (remainder 206 40))))
+        (if (= 6 0) something (gcd (remainder 206 40) (remainder 40 (remainder 206 40))))
+        (gcd (remainder 206 40) (remainder 40 (remainder 206 40)))
+        (if (= (remainder 40 (remainder 206 40)) 0) something (gcd (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))))
+        (if (= (remainder 40 6) 0) something (gcd (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))))
+        (if (= 4 0) something (gcd (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))))
+        (gcd (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))
+        (if (= (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) 0) something (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))))
+        (if (= (remainder (remainder 206 40) (remainder 40 6)) 0) something (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))))
+        (if (= (remainder 6 (remainder 40 6)) 0) something (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))))
+        (if (= (remainder 6 4) 0) something (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))))
+        (if (= 2 0) something (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))))))
+        (gcd (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))))
+        (if (= (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder (remainder 40 (remainder 206 40)) (remainder (remainder 206 40) (remainder 40 6))) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder (remainder 40 6) (remainder (remainder 206 40) (remainder 40 6))) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder (remainder 40 6) (remainder 6 (remainder 40 6))) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder (remainder 40 6) (remainder 6 4)) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder 4 (remainder 6 4)) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= (remainder 4 2) 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (if (= 0 0) (remainder (remainder 206 40) (remainder 40 (remainder 206 40))) (gcd something))
+        (remainder (remainder 206 40) (remainder 40 (remainder 206 40)))
+        (remainder (remainder 206 40) (remainder 40 6))
+        (remainder 6 (remainder 40 6))
+        (remainder 6 4)
+        2
+
+  If we use applicative-order evaluation, we only need to execute remainder 4 times:
+
+        (gcd 206 40)
+        (gcd 40 (remainder 206 40))
+        (gcd 40 6)
+        (gcd 6 (remainder 40 6))
+        (gcd 6 4)
+        (gcd 4 (remainder 6 4))
+        (gcd 4 2)
+        (gcd 2 (remainder 4 2))
+        (gcd 2 0)
+        2
+
+  And that is all for this section :)
