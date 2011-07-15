@@ -12,3 +12,8 @@
 (load "exercises/chapter-1/exercise-17.scm")
 (load "exercises/chapter-1/exercise-18.scm")
 (load "exercises/chapter-1/exercise-19.scm")
+(load "exercises/chapter-1/exercise-21.scm")
+(load "exercises/chapter-1/exercise-22.scm")
+(load "exercises/chapter-1/exercise-23.scm")
+(load "exercises/chapter-1/exercise-27.scm")
+(load "exercises/chapter-1/exercise-28.scm")
